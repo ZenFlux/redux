@@ -9,7 +9,6 @@ const onWarn: WarningHandlerWithDefault = ( warning, warn ) => {
 };
 
 const config: IZenToolkitConfig = {
-    toolkitOptions,
     format: [ 'es' ],
     extensions: [ '.ts' ],
     inputFileName: 'src/index.ts',
