@@ -1,0 +1,7 @@
+.idea
+dist
+node_modules
+
+src/.DS_Store
+
+link.config.json

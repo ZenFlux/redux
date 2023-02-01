@@ -1,0 +1,50 @@
+{
+	"name": "@zenflux/redux",
+	"version": "0.0.0-alpha.0",
+	"description": "ZenFlux redux",
+	"keywords": [
+		"zenflux",
+		"zen",
+		"flux",
+		"commands",
+		"manager",
+		"commands manager",
+		"redux",
+		"zenflux-redux"
+	],
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/zenflux/redux.git"
+	},
+	"license": "MIT",
+	"author": "Leonid Vinikov <czf.leo123@gmail.com> (https://github.com/iNewLegend)",
+	"main": "dist/cjs/zenflux-redux.js",
+	"unpkg": "dist/umd/zenflux-redux.js",
+	"module": "dist/es/zenflux-redux.js",
+	"types": "types/index.d.ts",
+	"scripts": {
+		"test": "export flow_modules_logger=off && jest",
+		"toolkit-build": "node_modules/@zenflux/rollup-toolkit/bin/run @build",
+		"toolkit-build-dev": "node_modules/@zenflux/rollup-toolkit/bin/dev @build",
+		"toolkit-watch": "node_modules/@zenflux/rollup-toolkit/bin/run @watch",
+		"toolkit-watch-dev": "node_modules/@zenflux/rollup-toolkit/bin/dev @watch"
+	},
+	"dependencies": {
+		"@reduxjs/toolkit": "^1.9.2",
+		"@zenflux/core": "0.0.0-alpha.9",
+		"react": "^18.2.0",
+		"react-dom": "^18.2.0",
+		"react-redux": "^8.0.5"
+	},
+	"devDependencies": {
+		"@babel/preset-env": "^7.20.2",
+		"@babel/preset-typescript": "^7.18.6",
+		"@types/jest": "^29.4.0",
+		"@typescript-eslint/eslint-plugin": "^5.50.0",
+		"@typescript-eslint/parser": "^5.50.0",
+		"@zenflux/rollup-toolkit": "^0.0.0-alpha.14",
+		"babel-jest": "^29.4.1",
+		"ts-jest": "^29.0.5",
+		"tslib": "^2.5.0"
+	}
+}
