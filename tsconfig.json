@@ -1,0 +1,15 @@
+{
+	"extends": "./tsconfig.paths.json",
+	"compilerOptions": {
+		"allowSyntheticDefaultImports": true,
+		"emitDeclarationOnly": true,
+		"esModuleInterop": true,
+		"lib": ["ESNext", "DOM"],
+		"module": "ESNext",
+		"moduleResolution":	"Node",
+		"skipLibCheck": true,
+		"strict": true,
+		"strictPropertyInitialization": false,
+		"target": "ESNext"
+	},
+}
