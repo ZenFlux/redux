@@ -1,3 +1,7 @@
+/**
+ * @author: Leonid Vinikov <leonidvinikov@gmail.com>
+ */
+
 import React from "react";
 
 export const usePrevious = <T extends unknown>( value: T ): T | undefined => {

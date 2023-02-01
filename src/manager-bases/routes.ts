@@ -1,3 +1,7 @@
+/**
+ * @author: Leonid Vinikov <leonidvinikov@gmail.com>
+ */
+
 import ZenCore, { commandBases } from '@zenflux/core';
 
 import { CommandRoute, IRouteCallback } from "../command-bases/command-route";

@@ -1,3 +1,6 @@
+/**
+ * @author: Leonid Vinikov <leonidvinikov@gmail.com>
+ */
 import ZenCore from '@zenflux/core';
 
 import Controller from "../core/controller";

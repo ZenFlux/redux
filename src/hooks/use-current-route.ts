@@ -1,3 +1,6 @@
+/**
+ * @author: Leonid Vinikov <leonidvinikov@gmail.com>
+ */
 import useControllerProperty from "./use-controller-property";
 
 export function useCurrentRoute( controllerName: string ) {

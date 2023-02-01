@@ -1,3 +1,6 @@
+/**
+ * @author: Leonid Vinikov <leonidvinikov@gmail.com>
+ */
 import useAppSelector from './use-app-selector';
 
 export function useController( name: string ) {
