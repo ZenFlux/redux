@@ -1,6 +1,6 @@
 {
 	"name": "@zenflux/redux",
-	"version": "0.0.0-alpha.2",
+	"version": "0.0.0-alpha.4",
 	"description": "ZenFlux redux",
 	"keywords": [
 		"zenflux",
@@ -22,6 +22,11 @@
 	"unpkg": "dist/umd/zenflux-redux.js",
 	"module": "dist/es/zenflux-redux.js",
 	"types": "types/index.d.ts",
+	"files": [
+		"dist",
+		"src",
+		"types"
+	],
 	"scripts": {
 		"test": "export flow_modules_logger=off && jest",
 		"toolkit-build": "node_modules/@zenflux/rollup-toolkit/bin/run @build",

@@ -2,7 +2,6 @@
 	"extends": "./tsconfig.es.json",
 	"compilerOptions": {
 		"sourceMap": true,
-		"sourceRoot": "./src",
 		"inlineSourceMap": true
 	}
 }
