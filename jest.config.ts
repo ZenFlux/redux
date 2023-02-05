@@ -11,10 +11,15 @@ export default async (): Promise<Config> => {
             '^.+\\.(ts|tsx)?$': ["ts-jest", { tsconfig: "./test/tsconfig.json" }],
             "^.+\\.(js|jsx)$": "babel-jest",
         },
+
+        transformIgnorePatterns: [
+            "node_modules/(?!@zenflux/core)"
+        ],
+
         setupFilesAfterEnv: [ "<rootDir>/test/__setup__.ts" ],
 
         moduleNameMapper: {
-            "^@zenflux/core$": "<rootDir>/../core/src/index.ts",
+            "^@zenflux/core$": "<rootDir>/node_modules/@zenflux/core/src/index.ts",
         }
     }
 }
