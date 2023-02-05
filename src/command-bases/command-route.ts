@@ -3,15 +3,7 @@
  */
 import ZenCore from '@zenflux/core';
 
-import Controller from "../core/controller";
-
-export type IRouteCallback = ( {}, {} ) => void;
-
-export interface ICommandRouteConfig {
-    callback: IRouteCallback;
-    controller: Controller;
-    command: typeof ZenCore.commandBases.CommandBase;
-}
+import { ICommandRouteConfig } from "../interfaces/";
 
 /**
  * Since routes are only callbacks, this wrapper will handle the naming & applying of the command(route).

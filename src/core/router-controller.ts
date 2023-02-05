@@ -2,26 +2,13 @@
  * @author: Leonid Vinikov <czf.leo123@gmail.com>
  * @description: Responsible for routing, each route is command, each controller have routes.
  */
-import {
-    CaseReducer,
-    PayloadAction,
-    SliceCaseReducers,
-} from '@reduxjs/toolkit';
-
 import Controller from "./controller";
 
 import { CommandRoute } from "../command-bases/";
+
 import { routes } from '../managers/'
 
-interface RouterControllerState {
-    at: number;
-    history: string[];
-    current: string;
-}
-
-interface IControllerReducers extends SliceCaseReducers<RouterControllerState> {
-    set: CaseReducer<RouterControllerState, PayloadAction<string>>;
-}
+import { IControllerReducers, IRouterControllerState } from "../interfaces/";
 
 export abstract class RouterController extends Controller {
     routes: { [ key: string ]: typeof CommandRoute } = {};
@@ -41,7 +28,7 @@ export abstract class RouterController extends Controller {
             { [ key: string ]: typeof CommandRoute };
     }
 
-    getSliceInitialState(): RouterControllerState {
+    getSliceInitialState(): IRouterControllerState {
         return {
             at: 0,
             history: [ '' ],

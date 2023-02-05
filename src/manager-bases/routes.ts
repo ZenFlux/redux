@@ -1,12 +1,13 @@
 /**
  * @author: Leonid Vinikov <leonidvinikov@gmail.com>
  */
-
 import ZenCore, { commandBases } from '@zenflux/core';
 
-import { CommandRoute, IRouteCallback } from "../command-bases/command-route";
+import { CommandRoute } from "../command-bases/command-route";
 
 import Controller from "../core/controller";
+
+import { IRouteCallbackType } from "../interfaces/";
 
 import { getStore } from "../store";
 
@@ -22,7 +23,7 @@ export class Routes extends ZenCore.managerBases.Commands {
         return await super.run( route, args );
     }
 
-    register( commands: { [ key: string ]: typeof commandBases.CommandBase | IRouteCallback }, controller: Controller ) {
+    register( commands: { [ key: string ]: typeof commandBases.CommandBase | IRouteCallbackType }, controller: Controller ) {
         for ( let key in commands ) {
             const command = commands[ key ],
                 CommandRouteClass = class extends CommandRoute {}; // Unique class each iteration.
@@ -35,7 +36,7 @@ export class Routes extends ZenCore.managerBases.Commands {
             CommandRouteClass.setConfig( {
                 controller,
                 command: command as typeof commandBases.CommandBase,
-                callback: command as IRouteCallback,
+                callback: command as IRouteCallbackType,
             } );
 
             commands[ key ] = CommandRouteClass;
