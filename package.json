@@ -1,6 +1,6 @@
 {
 	"name": "@zenflux/redux",
-	"version": "0.0.0-alpha.6",
+	"version": "0.0.1-dev.0",
 	"description": "ZenFlux redux",
 	"keywords": [
 		"zenflux",
@@ -36,7 +36,7 @@
 	},
 	"dependencies": {
 		"@reduxjs/toolkit": "^1.9.2",
-		"@zenflux/core": "0.0.0-alpha.14",
+		"@zenflux/core": "0.0.1-dev.0",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0",
 		"react-redux": "^8.0.5"
