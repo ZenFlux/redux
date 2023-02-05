@@ -1,9 +1,9 @@
 import ZenFlux from "@zenflux/core";
-import ZenRedux from '../src/';
+import ZenRedux from "../src/";
 
 beforeAll( async () => {
     // Do something.
- })
+ });
 
 beforeEach(async () => {
     ZenFlux.initialize();

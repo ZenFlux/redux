@@ -5,13 +5,13 @@ export interface IItem {
     id: number | null;
 }
 
-export class ItemState {
+export class IItemState {
     items: IItem[] = [];
 }
 
-export interface IItemReducers extends SliceCaseReducers<ItemState> {
-    addItem: CaseReducer<ItemState, PayloadAction<IItem>>;
-    removeItem: CaseReducer<ItemState, PayloadAction<IItem>>;
+export interface IItemReducers extends SliceCaseReducers<IItemState> {
+    addItem: CaseReducer<IItemState, PayloadAction<IItem>>;
+    removeItem: CaseReducer<IItemState, PayloadAction<IItem>>;
 }
 
 describe( 'Core', () => {
@@ -19,8 +19,8 @@ describe( 'Core', () => {
         it( 'The slice of the controller should be aware of the reducer actions', () => {
             // Arrange.
             class Controller extends ZenRedux.core.Controller {
-                getSliceInitialState(): ItemState {
-                    return new ItemState();
+                getSliceInitialState(): IItemState {
+                    return new IItemState();
                 }
 
                 getReducers(): IItemReducers {
