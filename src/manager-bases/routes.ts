@@ -23,7 +23,7 @@ export class Routes extends ZenCore.managerBases.Commands {
         return await super.run( route, args );
     }
 
-    register( commands: { [ key: string ]: typeof commandBases.CommandBase | IRouteCallbackType }, controller: Controller ) {
+    register( commands: { [ key: string ]: typeof commandBases.CommandBase | Function }, controller: Controller ) {
         for ( let key in commands ) {
             const command = commands[ key ],
                 CommandRouteClass = class extends CommandRoute {}; // Unique class each iteration.
@@ -36,7 +36,7 @@ export class Routes extends ZenCore.managerBases.Commands {
             CommandRouteClass.setConfig( {
                 controller,
                 command: command as typeof commandBases.CommandBase,
-                callback: command as IRouteCallbackType,
+                callback: command as () => {},
             } );
 
             commands[ key ] = CommandRouteClass;

@@ -8,10 +8,10 @@ import { CommandRoute } from "../command-bases/";
 
 import { routes } from '../managers/'
 
-import { IControllerReducers, IRouterControllerState } from "../interfaces/";
+import { IControllerReducers, IRouteCallbackType, IRouterControllerState } from "../interfaces/";
 
 export abstract class RouterController extends Controller {
-    routes: { [ key: string ]: typeof CommandRoute } = {};
+    routes: { [ key: string ]: typeof CommandRoute|IRouteCallbackType } = {};
 
     static getName() {
         return 'Redux/Core/RouterController'
@@ -25,7 +25,7 @@ export abstract class RouterController extends Controller {
 
     registerRoutes() {
         this.routes = routes.register( this.getRoutes(), this ) as
-            { [ key: string ]: typeof CommandRoute };
+            { [ key: string ]: typeof CommandRoute|IRouteCallbackType };
     }
 
     getSliceInitialState(): IRouterControllerState {
@@ -50,7 +50,7 @@ export abstract class RouterController extends Controller {
      *
      * @notice First route in the object is always representing the default route.
      */
-    abstract getRoutes(): { [ key: string ]: typeof CommandRoute }
+    abstract getRoutes(): { [ key: string ]: typeof CommandRoute|IRouteCallbackType }
 }
 
 export default RouterController;
